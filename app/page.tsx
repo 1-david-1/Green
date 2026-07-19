@@ -1,5 +1,5 @@
-import { GreenMatchExperience } from "@/components/greenmatch-experience";
+import { GsapHero } from "@/components/gsap-hero";
 
 export default function Page() {
-  return <GreenMatchExperience />;
+  return <GsapHero />;
 }
