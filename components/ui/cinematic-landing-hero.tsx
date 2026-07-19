@@ -19,6 +19,10 @@ export interface CinematicLandingHeroProps extends React.HTMLAttributes<HTMLDivE
   metricLabel?: string;
   ctaHeading?: string;
   ctaDescription?: string;
+  primaryActionLabel?: string;
+  secondaryActionLabel?: string;
+  onPrimaryAction?: () => void;
+  onSecondaryAction?: () => void;
 }
 
 export function CinematicLandingHero({
@@ -35,6 +39,10 @@ export function CinematicLandingHero({
   metricLabel = "Matches today",
   ctaHeading = "Start with a focused landing page.",
   ctaDescription = "A polished first impression with motion, contrast, and a direct path into the marketplace.",
+  primaryActionLabel = "Anmelden",
+  secondaryActionLabel = "Registrieren",
+  onPrimaryAction,
+  onSecondaryAction,
   className,
   ...props
 }: CinematicLandingHeroProps) {
@@ -178,13 +186,27 @@ export function CinematicLandingHero({
               </p>
             </div>
 
+            <div className="gm-reveal rounded-full border border-white/12 bg-white/8 px-4 py-3 text-sm text-white/72 backdrop-blur">
+              {ctaHeading}
+              <span className="ml-2 text-white/45">•</span>
+              <span className="ml-2">{ctaDescription}</span>
+            </div>
+
             <div className="gm-reveal flex flex-wrap gap-3">
-              <button className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-forest-900 transition hover:-translate-y-0.5 hover:bg-forest-50">
-                {ctaHeading}
+              <button
+                type="button"
+                onClick={onPrimaryAction}
+                className="inline-flex min-h-12 items-center rounded-full bg-emerald-300 px-5 py-3 text-sm font-semibold text-forest-900 transition hover:-translate-y-0.5 hover:bg-emerald-200"
+              >
+                {primaryActionLabel}
               </button>
-              <span className="rounded-full border border-white/15 bg-white/8 px-5 py-3 text-sm leading-6 text-white/82 backdrop-blur">
-                {ctaDescription}
-              </span>
+              <button
+                type="button"
+                onClick={onSecondaryAction}
+                className="inline-flex min-h-12 items-center rounded-full border border-white/15 bg-white/8 px-5 py-3 text-sm font-semibold text-white/90 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/12"
+              >
+                {secondaryActionLabel}
+              </button>
             </div>
           </div>
 
