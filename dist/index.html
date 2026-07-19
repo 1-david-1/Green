@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenMatch</title>
+    <meta
+      name="description"
+      content="GreenMatch ist die vertrauensbasierte Plattform für Gartenarbeiten mit Bieten, Kalender und Compliance."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="bg-orbs"></div>
+    <main class="shell">
+      <section class="hero card">
+        <div class="hero-copy">
+          <span class="pill" id="platform-pill">Zweiseitige Plattform</span>
+          <h1 id="headline">GreenMatch</h1>
+          <p id="subheadline">
+            Vertrauensbasierter Marktplatz für Gartenarbeit in Deutschland. Mit eBay-artigem Bieten, privater
+            Stammhelfer-Liste, Kalenderfreigaben und compliance-orientierter Provider-Steuerung.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button class="ghost-btn" id="lang-toggle" type="button">DE</button>
+          <button class="primary-btn" id="work-toggle" type="button">Ich arbeite heute</button>
+        </div>
+      </section>
+
+      <section class="grid two-col">
+        <div class="stack">
+          <section class="card panel">
+            <div class="panel-head">
+              <div>
+                <h2 id="bidding-title">Bieten &amp; Verhandeln</h2>
+                <p id="bidding-copy">Inserate, Gegenangebote, Chat und finaler Vertragsabschluss in einem Flow.</p>
+              </div>
+              <div class="score-badge">
+                <span>Trust-Score</span>
+                <strong>92%</strong>
+              </div>
+            </div>
+
+            <div class="gig-grid" id="gig-grid"></div>
+
+            <div class="bid-row">
+              <label>
+                <span id="bid-label">Finales Gebot</span>
+                <input id="bid-input" type="number" value="55" />
+              </label>
+              <button class="primary-btn" id="submit-bid" type="button">Gebot abgeben</button>
+            </div>
+          </section>
+
+          <section class="card panel">
+            <div class="panel-head">
+              <div>
+                <h2 id="calendar-title">Kalender</h2>
+                <p id="calendar-copy">Freie Zeitfenster werden als Buchungs-Slots dargestellt.</p>
+              </div>
+              <div class="status-chip" id="work-status">Ich arbeite heute</div>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+          </section>
+        </div>
+
+        <aside class="stack">
+          <section class="card panel">
+            <h2 id="compliance-title">Compliance</h2>
+            <div class="verification-box">
+              <small id="verification-label">Verifizierungs-Vorschau</small>
+              <strong id="verification-category">Youth</strong>
+              <p id="verification-copy">
+                Jugendliche werden automatisch auf leichte Tätigkeiten, Zeitfenster und Stundenlimits begrenzt.
+              </p>
+            </div>
+            <div class="restriction-list" id="restriction-list"></div>
+          </section>
+
+          <section class="card panel">
+            <div class="panel-head compact">
+              <h2>PStTG monitor</h2>
+              <span class="status-chip accent" id="psttg-status">warning</span>
+            </div>
+
+            <div class="monitor-grid">
+              <label>
+                <span>Tx</span>
+                <input id="tx-input" type="number" value="22" />
+              </label>
+              <label>
+                <span>EUR</span>
+                <input id="eur-input" type="number" value="1640" />
+              </label>
+              <label class="checkbox-row">
+                <input id="taxid-input" type="checkbox" />
+                <span id="taxid-label">Tax ID verified</span>
+              </label>
+            </div>
+
+            <div class="callout">
+              <strong id="psttg-message">Provider is approaching the reporting threshold.</strong>
+              <p id="psttg-next">Prompt the provider to verify the tax ID early.</p>
+            </div>
+
+            <button class="secondary-btn" id="slot-request" type="button">Slot anfragen</button>
+
+            <div class="provider-card">
+              <div>
+                <small id="provider-label">Selected provider</small>
+                <strong id="provider-name">Mila K.</strong>
+                <p id="provider-badge">Ich bin neu</p>
+              </div>
+              <div class="tiny-panel">
+                <small id="availability-label">Verfügbarkeit</small>
+                <strong id="provider-availability">Heute, 14:00 - 18:00</strong>
+                <p id="insurance-label">Versicherung enthalten</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card panel">
+            <div class="panel-head compact">
+              <h2 id="crew-title">Stammhelfer-Netzwerk</h2>
+            </div>
+            <div class="provider-list" id="provider-list"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
