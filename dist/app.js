@@ -4,24 +4,25 @@ const copy = {
     register: "Registrieren",
     logout: "Abmelden",
     home: "Home",
-    dashboard: "Dashboard",
+    dashboard: "Dispatch",
     gardeners: "Gartenarbeiter",
     profile: "Profil",
-    marketplace: "Marktplatz",
-    welcome: "Vertrauen, Rechtssicherheit und klare Verbindungen für Gartenarbeit in Deutschland.",
-    startLogin: "Mit Login starten",
-    startSignup: "Konto erstellen",
+    marketplace: "Vermittlung",
+    welcome: "Stelle eine Anfrage und die Plattform dispatcht verfügbare Gartenarbeiter in deiner Nähe.",
+    startLogin: "Anfrage starten",
+    startSignup: "Als Helfer starten",
     openApp: "In die App",
     roleCustomer: "Arbeitgeber",
     roleProvider: "Gartenarbeiter",
-    summary: "Übersicht",
-    myCrew: "My Garden Crew",
+    appTitle: "GreenMatch Dispatch",
+    summary: "Requests",
+    myCrew: "Favoriten",
     invoices: "Rechnungen",
     escrow: "Treuhand",
     availability: "Verfügbarkeit",
     radius: "Radius",
-    filterHint: "Filtere Gartenarbeiter nach Nähe, Status und Rolle.",
-    profileHint: "Dein Profil, deine Steuerdaten und deine Verfügbarkeit.",
+    filterHint: "Filtere verfügbare Helfer nach Nähe, Status und Reaktionszeit.",
+    profileHint: "Dein Profil, deine Verfügbarkeit und deine Rolle im Dispatch.",
     workingToday: "Ich arbeite heute",
     notWorkingToday: "Ich arbeite heute nicht",
     rating: "Bewertung",
@@ -29,7 +30,7 @@ const copy = {
     newBadge: "Ich bin neu",
     workingNow: "Jetzt verfügbar",
     checkout: "Rechnungsansicht",
-    weekPlan: "Wochenplanung",
+    weekPlan: "Verfügbarkeit",
     exportPsttg: "PStTG-Export simulieren",
     heroMetricLabel: "Heutige Matches",
     ctaPrimary: "Anmelden",
@@ -37,56 +38,57 @@ const copy = {
     authTitleLogin: "Mit wenigen Klicks in die App.",
     authTitleSignup: "Ein Konto mit echter Rollenlogik.",
     authLead:
-      "Die Registrierungsseite ist bewusst anders als die App. Nach dem Login wechseln wir in eine getrennte Produktoberfläche mit Dashboard, Gartenarbeiteransicht und Profil.",
-    authPoint1: "Erst Überzeugung, dann Nutzung",
-    authPoint2: "Jugendschutz und Steuer-Logik integriert",
-    authPoint3: "Premium statt Misch-Dashboard",
+      "Die Registrierungsseite ist bewusst anders als die App. Nach dem Login wechseln wir in eine getrennte Vermittlungszentrale mit Dispatch, Helfer-Queue und Profil.",
+    authPoint1: "Anfrage statt Inserat",
+    authPoint2: "Dispatch statt Suche",
+    authPoint3: "Dispatch statt Misch-Dashboard",
     authSubmitLogin: "In die App",
     authSubmitSignup: "Konto erstellen",
-    appCustomerTitle: "Arbeitgeber-Dashboard",
-    appProviderTitle: "Gartenarbeiterbereich",
-    dashboardTitle: "Treuhand-Zahlungsfluss",
-    annualTitle: "Jahresübersicht",
-    gardenersTitle: "Gartenarbeiter in deiner Nähe",
-    gardenersPreview: "Geografische Vorschau",
+    appCustomerTitle: "Dispatch-Zentrale",
+    appProviderTitle: "Einsatz-Queue",
+    dashboardTitle: "Live-Dispatch",
+    annualTitle: "Vermittlungsübersicht",
+    gardenersTitle: "Verfügbare Helfer",
+    gardenersPreview: "Reichweite",
     profileCard: "Mein Profil",
     profileTitle: "Wochenplanung",
     profileValidation: "Validierung",
-    invoiceTitle: "Rechnungsansicht",
-    topLabel: "Rechtssichere Garten-Vermittlung",
-    landingCard1Title: "Rechtssicherheit",
+    invoiceTitle: "Dispatch-Ticket",
+    topLabel: "On-demand Gartenvermittlung",
+    landingCard1Title: "Anfrage statt Inserat",
     landingCard1Text:
-      "JArbSchG, PStTG und Rechnungen sind als echte Produktlogik und nicht nur als Text im Footer angelegt.",
-    landingCard2Title: "Premium UI",
+      "Der Kunde stellt eine Anfrage, die Plattform routed sie an passende Helfer und zeigt Reaktionsstatus in Echtzeit.",
+    landingCard2Title: "Live-Dispatch",
     landingCard2Text:
-      "Klarer Premium-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Interaktionen.",
-    landingCard3Title: "Zwei Welten",
+      "Premium-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Reaktionssignalen.",
+    landingCard3Title: "Zwei Rollen",
     landingCard3Text:
-      "Die Website führt zur App, und die App hat eigene Bereiche für Dashboard, Gartenarbeiter und Profil."
+      "Kunde und Helfer bekommen getrennte Oberflächen: Anfrage, Annahme und Profil."
   },
   EN: {
     login: "Log in",
     register: "Register",
     logout: "Log out",
     home: "Home",
-    dashboard: "Dashboard",
+    dashboard: "Dispatch",
     gardeners: "Gardeners",
     profile: "Profile",
-    marketplace: "Marketplace",
-    welcome: "Trust, compliance, and clear matches for garden work in Germany.",
-    startLogin: "Start with login",
-    startSignup: "Create account",
+    marketplace: "Dispatch",
+    welcome: "Submit a request and the platform dispatches available gardeners near you.",
+    startLogin: "Start a request",
+    startSignup: "Join as helper",
     openApp: "Open app",
     roleCustomer: "Customer",
     roleProvider: "Gardener",
-    summary: "Overview",
-    myCrew: "My Garden Crew",
+    appTitle: "GreenMatch Dispatch",
+    summary: "Requests",
+    myCrew: "Favorites",
     invoices: "Invoices",
     escrow: "Escrow",
     availability: "Availability",
     radius: "Radius",
-    filterHint: "Filter gardeners by distance, availability, and role.",
-    profileHint: "Your profile, tax details, and availability.",
+    filterHint: "Filter available helpers by distance, availability, and response time.",
+    profileHint: "Your profile, availability, and role in dispatch.",
     workingToday: "I work today",
     notWorkingToday: "I do not work today",
     rating: "Rating",
@@ -94,7 +96,7 @@ const copy = {
     newBadge: "I'm new",
     workingNow: "Available now",
     checkout: "Invoice view",
-    weekPlan: "Weekly plan",
+    weekPlan: "Availability",
     exportPsttg: "Simulate PStTG export",
     heroMetricLabel: "Matches today",
     ctaPrimary: "Log in",
@@ -102,31 +104,31 @@ const copy = {
     authTitleLogin: "Jump straight into the app.",
     authTitleSignup: "Create an account with real role logic.",
     authLead:
-      "The sign-in page is intentionally different from the app. After login, we switch into a separate product surface with dashboard, gardener view, and profile.",
-    authPoint1: "Convince first, then convert",
-    authPoint2: "Youth and tax logic built in",
+      "The sign-in page is intentionally different from the app. After login, we switch into a separate dispatch center with request routing, helper queues, and profile.",
+    authPoint1: "Request instead of listings",
+    authPoint2: "Dispatch instead of search",
     authPoint3: "Premium instead of mixed dashboards",
     authSubmitLogin: "Open app",
     authSubmitSignup: "Create account",
-    appCustomerTitle: "Customer dashboard",
-    appProviderTitle: "Gardener workspace",
-    dashboardTitle: "Escrow payment flow",
-    annualTitle: "Annual summary",
-    gardenersTitle: "Gardeners near you",
-    gardenersPreview: "Geographic preview",
+    appCustomerTitle: "Dispatch center",
+    appProviderTitle: "Request queue",
+    dashboardTitle: "Live dispatch",
+    annualTitle: "Dispatch overview",
+    gardenersTitle: "Available helpers",
+    gardenersPreview: "Coverage",
     profileCard: "My profile",
     profileTitle: "Weekly plan",
     profileValidation: "Validation",
-    invoiceTitle: "Invoice view",
-    topLabel: "Compliant garden marketplace",
-    landingCard1Title: "Compliance",
-    landingCard1Text: "JArbSchG, PStTG and invoice logic are part of the product, not just marketing copy.",
-    landingCard2Title: "Premium UI",
+    invoiceTitle: "Dispatch ticket",
+    topLabel: "On-demand garden dispatch",
+    landingCard1Title: "Request, not listings",
+    landingCard1Text: "Customers place a request, the platform routes it to matching helpers, and response status updates live.",
+    landingCard2Title: "Live dispatch",
     landingCard2Text:
-      "A premium visual language with strong typography, calm surfaces, and precise interactions.",
-    landingCard3Title: "Two worlds",
+      "Premium visuals with strong typography, calm surfaces, and precise response signals.",
+    landingCard3Title: "Two roles",
     landingCard3Text:
-      "The landing page leads into a distinct app shell with dashboard, gardeners, and profile sections."
+      "Customer and helper get separate surfaces: request, acceptance, and profile."
   }
 };
 
@@ -380,7 +382,7 @@ function renderLanding() {
       <section class="hero-stage">
         <div class="hero-copy">
           <span class="eyebrow">${t().marketplace}</span>
-          <h1>${state.locale === "DE" ? "Gartenarbeit," : "Garden work,"} <span>${state.locale === "DE" ? "neu gedacht." : "reimagined."}</span></h1>
+          <h1>${state.locale === "DE" ? "Gartenhilfe" : "Garden help"} <span>${state.locale === "DE" ? "auf Abruf." : "on demand."}</span></h1>
           <p>${t().welcome}</p>
           <div class="hero-actions">
             <button class="btn-primary strong" id="hero-login" type="button">${t().startLogin}</button>
@@ -396,13 +398,13 @@ function renderLanding() {
           <div class="hero-widget-top">
             <div>
               <span class="widget-label">${state.locale === "DE" ? "Startseite" : "Landing"}</span>
-              <h2>${state.locale === "DE" ? "Vertrauen zuerst." : "Trust first."}</h2>
+              <h2>${state.locale === "DE" ? "Dispatch first." : "Dispatch first."}</h2>
               <p>${state.locale === "DE"
-                ? "Ein klarer Einstieg für Arbeitgeber und Gartenarbeiter, mit hochwertigem, ruhigem Design und einer echten App darunter."
-                : "A calm, premium entry point for customers and gardeners, with a real app experience behind the sign-in flow."}</p>
+                ? "Der Kunde stellt die Anfrage, die Plattform verteilt sie an verfügbare Helfer. On-demand, statt Listenchaos."
+                : "Customers submit a request and the platform routes it to available helpers. On-demand, not listing chaos."}</p>
             </div>
             <div class="hero-score">
-              <span>${t().heroMetricLabel}</span>
+              <span>${state.locale === "DE" ? "Dispatches" : "Dispatches"}</span>
               <strong id="hero-count-value">${state.heroCount}</strong>
             </div>
           </div>
@@ -413,7 +415,7 @@ function renderLanding() {
           <div class="hero-badges">
             <div class="badge-tile"><span>${t().summary}</span><strong>${state.locale === "DE" ? "Rechtssicher" : "Compliant"}</strong></div>
             <div class="badge-tile"><span>${t().escrow}</span><strong>${state.locale === "DE" ? "Treuhand" : "Escrow"}</strong></div>
-            <div class="badge-tile"><span>${t().availability}</span><strong>${state.locale === "DE" ? "Kalender" : "Calendar"}</strong></div>
+            <div class="badge-tile"><span>${t().availability}</span><strong>${state.locale === "DE" ? "Sofort" : "Instant"}</strong></div>
           </div>
         </div>
       </section>
@@ -441,14 +443,14 @@ function renderAuth() {
   return `
     <main class="shell auth-shell">
       <section class="surface auth-grid">
-        <div class="auth-copy">
-          <span class="eyebrow">${state.locale === "DE" ? "Anmeldung" : "Authentication"}</span>
-          <h1>${authTitle}</h1>
-          <p>${t().authLead}</p>
-          <div class="auth-points">
-            <div class="point">${t().authPoint1}</div>
-            <div class="point">${t().authPoint2}</div>
-            <div class="point">${t().authPoint3}</div>
+          <div class="auth-copy">
+            <span class="eyebrow">${state.locale === "DE" ? "Anmeldung" : "Authentication"}</span>
+            <h1>${authTitle}</h1>
+            <p>${t().authLead}</p>
+            <div class="auth-points">
+              <div class="point">${t().authPoint1}</div>
+              <div class="point">${t().authPoint2}</div>
+              <div class="point">${t().authPoint3}</div>
           </div>
         </div>
 
@@ -489,21 +491,21 @@ function renderDashboardTab() {
     <section class="app-grid">
       <div class="stack">
         <div class="summary-grid">
-          <article class="surface stat-card"><span>${t().summary}</span><strong>12</strong><small>${state.locale === "DE" ? "Aktive Aufträge" : "Active jobs"}</small></article>
+          <article class="surface stat-card"><span>${state.locale === "DE" ? "Offene Requests" : "Open requests"}</span><strong>12</strong><small>${state.locale === "DE" ? "Warten auf Dispatch" : "Waiting for dispatch"}</small></article>
+          <article class="surface stat-card"><span>${state.locale === "DE" ? "Gematcht" : "Matched"}</span><strong>7</strong><small>${state.locale === "DE" ? "Helfer bestätigt" : "Helpers confirmed"}</small></article>
           <article class="surface stat-card"><span>${t().escrow}</span><strong>EUR 1,820</strong><small>${state.locale === "DE" ? "Gesichert" : "Secured"}</small></article>
-          <article class="surface stat-card"><span>${t().trust}</span><strong>98%</strong><small>${state.locale === "DE" ? "Premium Score" : "Premium score"}</small></article>
         </div>
 
         <article class="surface panel">
           <div class="panel-head">
             <div>
-              <h3>${t().dashboard}</h3>
-              <p>${state.locale === "DE" ? "Payment pending -> escrow locked -> payout in progress -> paid / dispute." : "Payment pending -> escrow locked -> payout in progress -> paid / dispute."}</p>
+              <h3>${state.locale === "DE" ? "Live-Dispatch" : "Live dispatch"}</h3>
+              <p>${state.locale === "DE" ? "Anfrage -> Match -> Annahme -> Anfahrt -> Abschluss." : "Request -> match -> accept -> arrive -> finish."}</p>
             </div>
             <span class="status-pill">${psttg.status}</span>
           </div>
           <div class="flow-grid">
-            ${["Zahlung offen", "Treuhand gesperrt", "In Auszahlung", "Ausgezahlt"]
+            ${[state.locale === "DE" ? "Anfrage offen" : "Request open", state.locale === "DE" ? "Gematcht" : "Matched", state.locale === "DE" ? "Annahme" : "Accepted", state.locale === "DE" ? "Unterwegs" : "On the way"]
               .map(
                 (step, index) => `
                 <div class="flow-step ${index < 2 ? "active" : ""}">
@@ -530,14 +532,14 @@ function renderDashboardTab() {
             <button class="btn-ghost small" type="button">${t().exportPsttg}</button>
           </div>
           <div class="info-list">
-            <div class="info-row"><span>${state.locale === "DE" ? "Transaktionen" : "Transactions"}</span><strong>22</strong></div>
+            <div class="info-row"><span>${state.locale === "DE" ? "Dispatches" : "Dispatches"}</span><strong>22</strong></div>
             <div class="info-row"><span>${state.locale === "DE" ? "Umsatz" : "Revenue"}</span><strong>EUR 1,640</strong></div>
             <div class="info-row"><span>${t().invoices}</span><strong>14</strong></div>
           </div>
         </article>
 
         <article class="surface panel">
-          <h3>${t().invoiceTitle}</h3>
+          <h3>${state.locale === "DE" ? "Dispatch-Ticket" : "Dispatch ticket"}</h3>
           <div class="invoice-list">
             ${invoiceItems
               .map(
@@ -705,7 +707,7 @@ function renderAppShell() {
         <div>
           <span class="eyebrow">${t().appTitle}</span>
           <h1>${titleCopy}</h1>
-          <p>${state.authRole === "provider" ? "Gartenarbeiterbereich" : "Arbeitgeber-Dashboard"}</p>
+          <p>${state.authRole === "provider" ? (state.locale === "DE" ? "Einsatz-Queue für Helfer" : "Request queue for helpers") : (state.locale === "DE" ? "Dispatch-Zentrale für Kunden" : "Dispatch center for customers")}</p>
         </div>
         <div class="banner-card">
           <span>${t().escrow}</span>
@@ -715,7 +717,7 @@ function renderAppShell() {
       ${tabContent}
       <footer class="footer-note">
         ${state.locale === "DE"
-          ? "Dashboard und Website sind bewusst getrennt. Das ist die App nach dem Login."
+          ? "Dispatch und Website sind bewusst getrennt. Das ist die App nach dem Login."
           : "The website and app are intentionally separate. This is the post-login app."}
       </footer>
     </main>

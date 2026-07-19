@@ -95,27 +95,27 @@ const copy = {
     login: "Anmelden",
     register: "Registrieren",
     logout: "Abmelden",
-    dashboard: "Dashboard",
+    dashboard: "Dispatch",
     gardeners: "Gartenarbeiter",
     profile: "Profil",
-    marketplace: "Marktplatz",
-    welcome: "Vertrauen, Rechtssicherheit und klare Verbindungen für Gartenarbeit in Deutschland.",
-    startLogin: "Mit Login starten",
-    startSignup: "Konto erstellen",
+    marketplace: "Vermittlung",
+    welcome: "Stelle eine Anfrage und die Plattform dispatcht verfügbare Gartenarbeiter in deiner Nähe.",
+    startLogin: "Anfrage starten",
+    startSignup: "Als Helfer starten",
     openApp: "In die App",
-    summary: "Übersicht",
-    myCrew: "My Garden Crew",
+    summary: "Requests",
+    myCrew: "Favoriten",
     invoices: "Rechnungen",
     escrow: "Treuhand",
     availability: "Verfügbarkeit",
     distance: "Umkreis",
-    filterHint: "Filtere Gartenarbeiter nach Nähe, Status und Rolle.",
-    profileHint: "Dein Profil, deine Steuerdaten und deine Verfügbarkeit.",
+    filterHint: "Filtere verfügbare Helfer nach Nähe, Status und Reaktionszeit.",
+    profileHint: "Dein Profil, deine Verfügbarkeit und deine Rolle im Dispatch.",
     workingToday: "Ich arbeite heute",
     notWorkingToday: "Ich arbeite heute nicht",
     roleCustomer: "Arbeitgeber",
     roleProvider: "Gartenarbeiter",
-    appTitle: "GreenMatch App",
+    appTitle: "GreenMatch Dispatch",
     distanceLabel: "Entfernung",
     radius: "Radius",
     search: "Suche",
@@ -125,33 +125,33 @@ const copy = {
     workingNow: "Jetzt verfügbar",
     checkout: "Rechnungsansicht",
     profileCard: "Mein Profil",
-    weekPlan: "Wochenplanung"
+    weekPlan: "Verfügbarkeit"
   },
   EN: {
     login: "Log in",
     register: "Register",
     logout: "Log out",
-    dashboard: "Dashboard",
+    dashboard: "Dispatch",
     gardeners: "Gardeners",
     profile: "Profile",
-    marketplace: "Marketplace",
-    welcome: "Trust, compliance, and clear matches for garden work in Germany.",
-    startLogin: "Start with login",
-    startSignup: "Create account",
+    marketplace: "Dispatch",
+    welcome: "Submit a request and the platform dispatches available gardeners near you.",
+    startLogin: "Start a request",
+    startSignup: "Join as helper",
     openApp: "Open app",
-    summary: "Overview",
-    myCrew: "My Garden Crew",
+    summary: "Requests",
+    myCrew: "Favorites",
     invoices: "Invoices",
     escrow: "Escrow",
     availability: "Availability",
     distance: "Radius",
-    filterHint: "Filter gardeners by distance, availability, and role.",
-    profileHint: "Your profile, tax details, and availability.",
+    filterHint: "Filter available helpers by distance, availability, and response time.",
+    profileHint: "Your profile, availability, and role in dispatch.",
     workingToday: "I work today",
     notWorkingToday: "I do not work today",
     roleCustomer: "Customer",
     roleProvider: "Gardener",
-    appTitle: "GreenMatch App",
+    appTitle: "GreenMatch Dispatch",
     distanceLabel: "Distance",
     radius: "Radius",
     search: "Search",
@@ -161,7 +161,7 @@ const copy = {
     workingNow: "Available now",
     checkout: "Invoice view",
     profileCard: "My profile",
-    weekPlan: "Weekly plan"
+    weekPlan: "Availability"
   }
 } as const;
 
@@ -237,6 +237,17 @@ export function GreenMatchExperience() {
   };
 
   const isProvider = authRole === "provider";
+  const dispatchStats = authRole === "provider"
+    ? [
+        { label: locale === "DE" ? "Eingehende Requests" : "Incoming requests", value: "12", hint: locale === "DE" ? "Warten auf Annahme" : "Waiting for acceptance" },
+        { label: locale === "DE" ? "Bestätigt" : "Confirmed", value: "7", hint: locale === "DE" ? "Auftrag gesichert" : "Job secured" },
+        { label: t.escrow, value: "EUR 1,820", hint: locale === "DE" ? "Treuhand aktiv" : "Escrow active" },
+      ]
+    : [
+        { label: locale === "DE" ? "Offene Requests" : "Open requests", value: "12", hint: locale === "DE" ? "Warten auf Dispatch" : "Waiting for dispatch" },
+        { label: locale === "DE" ? "Gematcht" : "Matched", value: "7", hint: locale === "DE" ? "Helfer bestätigt" : "Helpers confirmed" },
+        { label: t.escrow, value: "EUR 1,820", hint: locale === "DE" ? "Gesichert" : "Secured" },
+      ];
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#f8fbf9_0%,#eef5f0_42%,#e9efea_100%)] text-forest-900">
@@ -253,7 +264,7 @@ export function GreenMatchExperience() {
             <div>
               <div className="text-lg font-semibold tracking-tight text-forest-900">GreenMatch</div>
               <div className="text-xs font-medium uppercase tracking-[0.26em] text-forest-500">
-                {locale === "DE" ? "Rechtssichere Garten-Vermittlung" : "Compliant garden marketplace"}
+                {locale === "DE" ? "On-demand Gartenvermittlung" : "On-demand garden dispatch"}
               </div>
             </div>
           </button>
@@ -303,16 +314,16 @@ export function GreenMatchExperience() {
         <main>
           <CinematicLandingHero
             brandName="GreenMatch"
-            tagline1={locale === "DE" ? "Gartenarbeit," : "Garden work,"}
-            tagline2={locale === "DE" ? "neu gedacht." : "reimagined."}
-            cardHeading={locale === "DE" ? "Vertrauen zuerst." : "Trust first."}
+            tagline1={locale === "DE" ? "Gartenhilfe" : "Garden help"}
+            tagline2={locale === "DE" ? "auf Abruf." : "on demand."}
+            cardHeading={locale === "DE" ? "Dispatch first." : "Dispatch first."}
             cardDescription={
               locale === "DE"
-                ? "Ein klarer Einstieg für Arbeitgeber und Gartenarbeiter, mit hochwertigem, ruhigem Design und einer echten App darunter."
-                : "A calm, premium entry point for customers and gardeners, with a real app experience behind the sign-in flow."
+                ? "Der Kunde stellt die Anfrage, die Plattform verteilt sie an verfügbare Helfer. Genau wie ein On-demand-Dienst, nur für Gartenarbeit."
+                : "Customers submit a request and the platform routes it to available helpers. On-demand matching, built for garden work."
             }
             metricValue={42}
-            metricLabel={locale === "DE" ? "Heutige Matches" : "Matches today"}
+            metricLabel={locale === "DE" ? "Live-Dispatches" : "Live dispatches"}
             ctaHeading={t.startLogin}
             ctaDescription={t.startSignup}
             primaryActionLabel={t.login}
@@ -328,25 +339,25 @@ export function GreenMatchExperience() {
             <div className="grid gap-4 md:grid-cols-3">
               {[
                 {
-                  title: locale === "DE" ? "Rechtssicherheit" : "Compliance",
+                  title: locale === "DE" ? "Anfrage statt Inserat" : "Request, not listings",
                   text:
                     locale === "DE"
-                      ? "JArbSchG, PStTG und Rechnungen sind als echte Produktlogik und nicht nur als Text im Footer angelegt."
-                      : "JArbSchG, PStTG and invoice logic are part of the product, not just marketing copy.",
+                      ? "Der Kunde stellt eine Anfrage, die Plattform routed sie an passende Helfer und zeigt Reaktionsstatus in Echtzeit."
+                      : "Customers place a request, the platform routes it to matching helpers, and response status updates live.",
                 },
                 {
-                  title: locale === "DE" ? "Premium UI" : "Premium UI",
+                  title: locale === "DE" ? "Live-Dispatch" : "Live dispatch",
                   text:
                     locale === "DE"
-                      ? "Klarer Premium-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Interaktionen."
-                      : "A premium visual language with strong typography, calm surfaces, and precise interactions.",
+                      ? "Premium-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Reaktionssignalen."
+                      : "Premium visuals with strong typography, calm surfaces, and precise response signals.",
                 },
                 {
-                  title: locale === "DE" ? "Zwei Welten" : "Two worlds",
+                  title: locale === "DE" ? "Zwei Rollen" : "Two roles",
                   text:
                     locale === "DE"
-                      ? "Die Website führt zur App, und die App hat eigene Bereiche für Dashboard, Gartenarbeiter und Profil."
-                      : "The landing page leads into a distinct app shell with dashboard, gardeners, and profile sections.",
+                      ? "Kunde und Helfer bekommen getrennte Oberflächen: Anfrage, Annahme und Profil."
+                      : "Customer and helper get separate surfaces: request, acceptance, and profile.",
                 }
               ].map((card) => (
                 <article key={card.title} className="rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-soft">
@@ -377,15 +388,15 @@ export function GreenMatchExperience() {
               </h1>
               <p className="mt-3 text-sm leading-7 text-forest-700">
                 {locale === "DE"
-                  ? "Die Registrierungsseite ist bewusst anders als die App. Nach dem Login wechseln wir in eine getrennte Produktoberfläche mit Dashboard, Gartenarbeiteransicht und Profil."
-                  : "The sign-in page is intentionally different from the app. After login, we switch into a separate product surface with dashboard, gardener view, and profile."}
+                  ? "Die Registrierungsseite ist bewusst anders als die App. Nach dem Login wechseln wir in eine getrennte Vermittlungszentrale mit Dispatch, Helfer-Queue und Profil."
+                  : "The sign-in page is intentionally different from the app. After login, we switch into a separate dispatch center with request routing, helper queues, and profile."}
               </p>
 
               <div className="mt-6 grid gap-3">
                 {[
-                  locale === "DE" ? "Erst Überzeugung, dann Nutzung" : "Convince first, then convert",
-                  locale === "DE" ? "Jugendschutz und Steuer-Logik integriert" : "Youth and tax logic built in",
-                  locale === "DE" ? "Premium statt Misch-Dashboard" : "Premium instead of mixed dashboards"
+                  locale === "DE" ? "Anfrage statt Inserat" : "Request instead of listings",
+                  locale === "DE" ? "Dispatch statt Suche" : "Dispatch instead of search",
+                  locale === "DE" ? "Dispatch statt Misch-Dashboard" : "Dispatch instead of mixed dashboards"
                 ].map((point) => (
                   <div key={point} className="rounded-2xl border border-forest-100 bg-forest-50 px-4 py-3 text-sm text-forest-800">
                     {point}
@@ -466,11 +477,11 @@ export function GreenMatchExperience() {
               <div className="mt-5 rounded-3xl border border-forest-100 bg-forest-50 p-4 text-sm text-forest-800">
                 {authRole === "provider"
                   ? locale === "DE"
-                    ? "Für Gartenarbeiter wird nach dem Login die Gartenarbeiterseite geöffnet."
-                    : "For gardeners, the post-login experience opens the gardener marketplace."
+                    ? "Für Helfer öffnet sich nach dem Login die Anfrage-Queue."
+                    : "For helpers, the post-login experience opens the request queue."
                   : locale === "DE"
-                    ? "Für Arbeitgeber öffnen wir direkt Dashboard und Gartenarbeiter-Filtersuche."
-                    : "For customers, we open the dashboard plus the gardener filter workspace."}
+                    ? "Für Kunden öffnen wir direkt den Dispatch-Flow und die Helfer-Filteransicht."
+                    : "For customers, we open the dispatch flow plus the helper filter workspace."}
               </div>
             </section>
           </div>
@@ -488,11 +499,11 @@ export function GreenMatchExperience() {
                 <h2 className="mt-1 text-2xl font-semibold tracking-tight text-forest-900">
                   {authRole === "provider"
                     ? locale === "DE"
-                      ? "Gartenarbeiterbereich"
-                      : "Gardener workspace"
+                      ? "Einsatz-Queue"
+                      : "Request queue"
                     : locale === "DE"
-                      ? "Arbeitgeber-Dashboard"
-                      : "Customer dashboard"}
+                      ? "Dispatch-Zentrale"
+                      : "Dispatch center"}
                 </h2>
               </div>
 
@@ -538,14 +549,11 @@ export function GreenMatchExperience() {
               <section className="grid gap-6 p-5 lg:grid-cols-[1.2fr_0.8fr]">
                 <div className="space-y-6">
                   <div className="grid gap-4 md:grid-cols-3">
-                    {[
-                      { label: locale === "DE" ? "Aktive Aufträge" : "Active jobs", value: "12" },
-                      { label: t.escrow, value: "EUR 1,820" },
-                      { label: t.trust, value: "98%" }
-                    ].map((card) => (
+                    {dispatchStats.map((card) => (
                       <article key={card.label} className="rounded-[1.5rem] border border-forest-100 bg-forest-50 p-5">
                         <div className="text-xs uppercase tracking-[0.22em] text-forest-500">{card.label}</div>
                         <div className="mt-2 text-2xl font-semibold text-forest-900">{card.value}</div>
+                        <div className="mt-1 text-xs text-forest-600">{card.hint}</div>
                       </article>
                     ))}
                   </div>
@@ -554,10 +562,12 @@ export function GreenMatchExperience() {
                     <div className="flex items-center justify-between gap-3">
                       <div>
                         <h3 className="text-xl font-semibold text-forest-900">
-                          {locale === "DE" ? "Treuhand-Zahlungsfluss" : "Escrow payment flow"}
+                          {locale === "DE" ? "Live-Dispatch" : "Live dispatch"}
                         </h3>
                         <p className="mt-1 text-sm text-forest-600">
-                          {"Payment pending -> escrow locked -> payout in progress -> paid / dispute."}
+                          {locale === "DE"
+                            ? "Anfrage -> Match -> Annahme -> Anfahrt -> Abschluss."
+                            : "Request -> match -> accept -> arrive -> finish."}
                         </p>
                       </div>
                       <span className="rounded-full bg-forest-50 px-3 py-2 text-xs font-semibold text-forest-700">
@@ -565,7 +575,12 @@ export function GreenMatchExperience() {
                       </span>
                     </div>
                     <div className="mt-4 grid gap-3 md:grid-cols-4">
-                      {["Zahlung offen", "Treuhand gesperrt", "In Auszahlung", "Ausgezahlt"].map((step, index) => (
+                      {[
+                        locale === "DE" ? "Anfrage offen" : "Request open",
+                        locale === "DE" ? "Gematcht" : "Matched",
+                        locale === "DE" ? "Annahme" : "Accepted",
+                        locale === "DE" ? "Unterwegs" : "On the way",
+                      ].map((step, index) => (
                         <div
                           key={step}
                           className={cn(
@@ -607,7 +622,9 @@ export function GreenMatchExperience() {
                   </section>
 
                   <section className="rounded-[1.75rem] border border-forest-100 bg-white p-5">
-                    <h3 className="text-xl font-semibold text-forest-900">{t.checkout}</h3>
+                    <h3 className="text-xl font-semibold text-forest-900">
+                      {locale === "DE" ? "Dispatch-Ticket" : "Dispatch ticket"}
+                    </h3>
                     <div className="mt-4 space-y-3">
                       {invoiceItems.map((item) => (
                         <div key={item.label} className="flex items-center justify-between rounded-2xl bg-forest-50 px-4 py-3">
@@ -838,7 +855,7 @@ export function GreenMatchExperience() {
 
             <footer className="border-t border-forest-100 px-5 py-4 text-sm text-forest-500">
               {locale === "DE"
-                ? "Dashboard und Website sind bewusst getrennt. Das ist die App nach dem Login."
+                ? "Dispatch und Website sind bewusst getrennt. Das ist die App nach dem Login."
                 : "The website and app are intentionally separate. This is the post-login app."}
             </footer>
           </div>
