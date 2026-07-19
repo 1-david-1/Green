@@ -13,7 +13,7 @@
   <body>
     <div class="bg-orbs"></div>
     <main class="shell">
-      <section class="hero card">
+      <section class="hero hero-stage card">
         <div class="hero-copy">
           <span class="pill" id="platform-pill">Zweiseitige Plattform</span>
           <h1 id="headline">GreenMatch</h1>
@@ -21,10 +21,41 @@
             Vertrauensbasierter Marktplatz für Gartenarbeit in Deutschland. Mit eBay-artigem Bieten, privater
             Stammhelfer-Liste, Kalenderfreigaben und compliance-orientierter Provider-Steuerung.
           </p>
+          <div class="hero-actions">
+            <button class="ghost-btn" id="lang-toggle" type="button">DE</button>
+            <button class="primary-btn" id="work-toggle" type="button">Ich arbeite heute</button>
+          </div>
+          <div class="hero-mini-grid">
+            <div class="hero-mini-card">
+              <span>Trust</span>
+              <strong>92%</strong>
+            </div>
+            <div class="hero-mini-card">
+              <span>Insurance</span>
+              <strong>Included</strong>
+            </div>
+            <div class="hero-mini-card">
+              <span>Live matches</span>
+              <strong id="hero-count">42</strong>
+            </div>
+          </div>
         </div>
-        <div class="hero-actions">
-          <button class="ghost-btn" id="lang-toggle" type="button">DE</button>
-          <button class="primary-btn" id="work-toggle" type="button">Ich arbeite heute</button>
+        <div class="hero-widget">
+          <div class="hero-widget-top">
+            <div>
+              <span class="hero-widget-label">Cinematic landing</span>
+              <h2>Match gardeners, not guesswork.</h2>
+              <p>Motion-first entry point with strong trust signals and a tactile counter.</p>
+            </div>
+            <div class="hero-widget-score">
+              <span id="hero-count-label">Matches today</span>
+              <strong id="hero-count-value">42</strong>
+            </div>
+          </div>
+          <div class="hero-widget-actions">
+            <button class="primary-btn" id="hero-count-dec" type="button">-</button>
+            <button class="primary-btn" id="hero-count-inc" type="button">+</button>
+          </div>
         </div>
       </section>
 

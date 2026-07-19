@@ -22,6 +22,7 @@ const copy = {
     availability: "Verfügbarkeit",
     insurance: "Versicherung enthalten",
     crewTitle: "Stammhelfer-Netzwerk",
+    heroMatches: "Heutige Matches",
     lang: "EN",
     providerNew: "Ich bin neu",
     providerPro: "Professioneller Betrieb",
@@ -56,6 +57,7 @@ const copy = {
     availability: "Availability",
     insurance: "Insurance included",
     crewTitle: "Favorite crew network",
+    heroMatches: "Matches today",
     lang: "DE",
     providerNew: "I'm new",
     providerPro: "Professional business",
@@ -125,10 +127,24 @@ let state = {
   tx: 22,
   eur: 1640,
   taxIdVerified: false,
-  bidValue: 55
+  bidValue: 55,
+  heroCount: 42
 };
 
 const el = (id) => document.getElementById(id);
+
+function bindHeroLight() {
+  const stage = document.querySelector(".hero-stage");
+  if (!stage) return;
+
+  window.addEventListener("mousemove", (event) => {
+    const rect = stage.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    stage.style.setProperty("--mouse-x", `${x}px`);
+    stage.style.setProperty("--mouse-y", `${y}px`);
+  });
+}
 
 function renderGigs() {
   el("gig-grid").innerHTML = gigs
@@ -245,6 +261,9 @@ function renderAll() {
   el("platform-pill").textContent = c.platformPill;
   el("headline").textContent = c.headline;
   el("subheadline").textContent = c.subheadline;
+  el("hero-count-label").textContent = c.heroMatches;
+  el("hero-count").textContent = state.heroCount;
+  el("hero-count-value").textContent = state.heroCount;
   el("bidding-title").textContent = c.biddingTitle;
   el("bidding-copy").textContent = c.biddingCopy;
   el("calendar-title").textContent = c.calendarTitle;
@@ -339,7 +358,18 @@ function bindEvents() {
       el("slot-request").textContent = copy[state.locale].requestSlot;
     }, 1600);
   });
+
+  el("hero-count-dec").addEventListener("click", () => {
+    state.heroCount = Math.max(0, state.heroCount - 1);
+    renderAll();
+  });
+
+  el("hero-count-inc").addEventListener("click", () => {
+    state.heroCount += 1;
+    renderAll();
+  });
 }
 
 bindEvents();
+bindHeroLight();
 renderAll();

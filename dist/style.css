@@ -71,8 +71,32 @@ body {
   align-items: end;
 }
 
+.hero-stage {
+  background:
+    radial-gradient(circle at top left, rgba(16, 34, 26, 0.92), transparent 46%),
+    radial-gradient(circle at top right, rgba(74, 222, 128, 0.12), transparent 22%),
+    linear-gradient(145deg, #10221a 0%, #173225 42%, #0d1712 100%);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.08), transparent 18%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.04), transparent 60%);
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.25s ease;
+}
+
 .hero-copy {
   max-width: 760px;
+  position: relative;
+  z-index: 1;
 }
 
 .pill {
@@ -109,10 +133,93 @@ h1 {
   color: #2e4d39;
 }
 
+.hero-stage .hero-copy p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
 .hero-actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.hero-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.hero-mini-card,
+.hero-widget {
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+}
+
+.hero-mini-card {
+  padding: 14px 16px;
+}
+
+.hero-mini-card span,
+.hero-widget-label,
+.hero-widget-score span {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-mini-card strong,
+.hero-widget-score strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.08rem;
+  color: #fff;
+}
+
+.hero-widget {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  min-width: min(100%, 390px);
+}
+
+.hero-widget-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.hero-widget h2 {
+  margin-top: 8px;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.hero-widget p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+}
+
+.hero-widget-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hero-widget-actions .primary-btn {
+  min-width: 52px;
+  border-radius: 18px;
+}
 }
 
 .grid {
@@ -431,6 +538,17 @@ input[type="number"]:focus {
   min-width: 74px;
 }
 
+.hero-stage .ghost-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.hero-stage .primary-btn {
+  background: linear-gradient(180deg, #fff 0%, #eaf4ee 100%);
+  color: var(--forest-900);
+}
+
 .provider-card {
   margin-top: 16px;
   display: grid;
@@ -460,6 +578,15 @@ input[type="number"]:focus {
   .calendar-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-widget {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 720px) {
@@ -485,7 +612,26 @@ input[type="number"]:focus {
     grid-template-columns: 1fr;
   }
 
+  .hero-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
   .calendar-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@keyframes floatUp {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-widget,
+.hero-mini-card {
+  animation: floatUp 7s ease-in-out infinite;
 }

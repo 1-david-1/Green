@@ -76,7 +76,7 @@ export function Dashboard() {
   );
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <section className="overflow-hidden rounded-[2rem] border border-forest-200/70 bg-white/70 shadow-soft">
         <div className="grid-pattern px-6 py-5 sm:px-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -335,6 +335,6 @@ export function Dashboard() {
           </div>
         </aside>
       </section>
-    </main>
+    </section>
   );
 }
