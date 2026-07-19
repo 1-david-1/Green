@@ -59,7 +59,7 @@ const copy = {
       "JArbSchG, PStTG und Rechnungen sind als echte Produktlogik und nicht nur als Text im Footer angelegt.",
     landingCard2Title: "Premium UI",
     landingCard2Text:
-      "Klarer Apple-/Stripe-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Interaktionen.",
+      "Klarer Premium-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Interaktionen.",
     landingCard3Title: "Zwei Welten",
     landingCard3Text:
       "Die Website führt zur App, und die App hat eigene Bereiche für Dashboard, Gartenarbeiter und Profil."
@@ -123,7 +123,7 @@ const copy = {
     landingCard1Text: "JArbSchG, PStTG and invoice logic are part of the product, not just marketing copy.",
     landingCard2Title: "Premium UI",
     landingCard2Text:
-      "Apple/Stripe-inspired with strong typography, calm surfaces, and precise interactions.",
+      "A premium visual language with strong typography, calm surfaces, and precise interactions.",
     landingCard3Title: "Two worlds",
     landingCard3Text:
       "The landing page leads into a distinct app shell with dashboard, gardeners, and profile sections."
@@ -377,10 +377,10 @@ function renderTopbar() {
 function renderLanding() {
   return `
     <main class="shell page-stack">
-      <section class="hero-stage surface">
+      <section class="hero-stage">
         <div class="hero-copy">
           <span class="eyebrow">${t().marketplace}</span>
-          <h1>${state.locale === "DE" ? "Gartenarbeit, aber" : "Garden work, but"} <span>${state.locale === "DE" ? "wie Apple/Stripe." : "Apple/Stripe polished."}</span></h1>
+          <h1>${state.locale === "DE" ? "Gartenarbeit," : "Garden work,"} <span>${state.locale === "DE" ? "neu gedacht." : "reimagined."}</span></h1>
           <p>${t().welcome}</p>
           <div class="hero-actions">
             <button class="btn-primary strong" id="hero-login" type="button">${t().startLogin}</button>

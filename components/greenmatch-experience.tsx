@@ -303,8 +303,8 @@ export function GreenMatchExperience() {
         <main>
           <CinematicLandingHero
             brandName="GreenMatch"
-            tagline1={locale === "DE" ? "Gartenarbeit, aber" : "Garden work, but"}
-            tagline2={locale === "DE" ? "wie Apple/Stripe." : "Apple/Stripe polished."}
+            tagline1={locale === "DE" ? "Gartenarbeit," : "Garden work,"}
+            tagline2={locale === "DE" ? "neu gedacht." : "reimagined."}
             cardHeading={locale === "DE" ? "Vertrauen zuerst." : "Trust first."}
             cardDescription={
               locale === "DE"
@@ -338,8 +338,8 @@ export function GreenMatchExperience() {
                   title: locale === "DE" ? "Premium UI" : "Premium UI",
                   text:
                     locale === "DE"
-                      ? "Klarer Apple-/Stripe-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Interaktionen."
-                      : "Apple/Stripe-inspired with strong typography, calm surfaces, and precise interactions.",
+                      ? "Klarer Premium-Look mit kräftiger Typo, ruhigen Oberflächen und präzisen Interaktionen."
+                      : "A premium visual language with strong typography, calm surfaces, and precise interactions.",
                 },
                 {
                   title: locale === "DE" ? "Zwei Welten" : "Two worlds",

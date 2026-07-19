@@ -199,17 +199,33 @@ img {
 .hero-stage {
   position: relative;
   overflow: hidden;
-  border-radius: 34px;
-  padding: 28px;
+  min-height: 760px;
+  border-radius: 40px;
+  padding: 36px;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-  gap: 22px;
-  align-items: end;
+  gap: 28px;
+  align-items: center;
   background:
     radial-gradient(circle at top left, rgba(16, 34, 26, 0.92), transparent 46%),
-    radial-gradient(circle at top right, rgba(74, 222, 128, 0.12), transparent 22%),
-    linear-gradient(145deg, #10221a 0%, #173225 42%, #0d1712 100%);
+    radial-gradient(circle at 82% 18%, rgba(139, 247, 171, 0.12), transparent 24%),
+    radial-gradient(circle at 18% 82%, rgba(180, 127, 55, 0.12), transparent 20%),
+    linear-gradient(145deg, #0d1813 0%, #173225 42%, #08100d 100%);
   color: #fff;
+  box-shadow: 0 28px 90px rgba(12, 32, 22, 0.26);
+}
+
+.hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(139, 247, 171, 0.22), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.08), transparent 20%),
+    radial-gradient(circle at 70% 72%, rgba(179, 126, 53, 0.14), transparent 22%);
+  filter: blur(18px);
+  animation: stageDrift 18s ease-in-out infinite;
 }
 
 .hero-stage::after {
@@ -218,8 +234,27 @@ img {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.08), transparent 18%),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 60%);
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.11), transparent 18%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.06), transparent 60%);
+}
+
+.hero-copy .eyebrow,
+.hero-copy h1,
+.hero-copy p,
+.hero-actions,
+.hero-mini-grid,
+.feature-grid .feature-card,
+.auth-copy .eyebrow,
+.auth-copy h1,
+.auth-copy p,
+.auth-card {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroReveal 0.9s cubic-bezier(0.2, 0.75, 0.2, 1) forwards;
+}
+
+.hero-copy .eyebrow {
+  animation-delay: 0.05s;
 }
 
 .hero-copy {
@@ -256,12 +291,17 @@ img {
   color: #8bf7ab;
 }
 
+.hero-copy h1 {
+  animation-delay: 0.14s;
+}
+
 .hero-copy p {
   margin: 14px 0 0;
   max-width: 46rem;
   color: rgba(255, 255, 255, 0.76);
   line-height: 1.7;
   font-size: 1.02rem;
+  animation-delay: 0.24s;
 }
 
 .hero-actions {
@@ -269,6 +309,7 @@ img {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  animation-delay: 0.34s;
 }
 
 .hero-mini-grid {
@@ -276,6 +317,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+  animation-delay: 0.44s;
 }
 
 .mini-card,
@@ -326,7 +368,11 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
-  animation: floatUp 7s ease-in-out infinite;
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  animation:
+    heroReveal 0.95s cubic-bezier(0.2, 0.75, 0.2, 1) forwards 0.2s,
+    floatUp 7s ease-in-out infinite 1.15s;
 }
 
 .hero-widget-top {
@@ -369,6 +415,20 @@ img {
 
 .feature-card {
   padding: 24px;
+  transform: translateY(18px);
+  animation-delay: 0.54s;
+}
+
+.feature-grid .feature-card:nth-child(1) {
+  animation-delay: 0.54s;
+}
+
+.feature-grid .feature-card:nth-child(2) {
+  animation-delay: 0.64s;
+}
+
+.feature-grid .feature-card:nth-child(3) {
+  animation-delay: 0.74s;
 }
 
 .feature-card h3,
@@ -981,6 +1041,50 @@ img {
 .hero-widget,
 .mini-card {
   animation: floatUp 7s ease-in-out infinite;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes stageDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage::before,
+  .hero-copy .eyebrow,
+  .hero-copy h1,
+  .hero-copy p,
+  .hero-actions,
+  .hero-mini-grid,
+  .feature-grid .feature-card,
+  .auth-copy .eyebrow,
+  .auth-copy h1,
+  .auth-copy p,
+  .auth-card,
+  .hero-widget,
+  .mini-card {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 }
 
 @media (max-width: 1100px) {
